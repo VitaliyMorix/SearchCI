@@ -28,7 +28,7 @@ int main()
 		for (int i = 0; i < n; i++)
 		{
 			//std::cout << i + 1 << ") ";
-			std::string strMsgILoc = std::to_string(i) + ") ";
+			std::string strMsgILoc = std::to_string(i+1) + ") ";
 			std::cout << strMsgILoc;
 			//std::cin >> ptr[i];
 			//errorCout(ptr[i], strMsgILoc);

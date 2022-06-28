@@ -41,11 +41,12 @@ void errorCout<double>(double&, const double&, const double&);
 
 #include<iostream>
 #include<istream>
+#include<sstream>
 #include<limits>
 #include<string>
 #include "functionHeader.h"
 
-template<typename T>
+/*template<typename T>
 void errorCout(T& inputCount)
 {
 	while (!(std::cin >> inputCount))
@@ -58,7 +59,7 @@ void errorCout(T& inputCount)
 }
 
 template<typename T>
-void errorCout(T& inputCount, const T& minCount, const T& maxCount, const std::string& msgIn)
+void errorCout(const T& inputCount, const T& minCount, const T& maxCount, const std::string& msgIn)
 {
 	while (true)
 	{
@@ -75,6 +76,8 @@ void errorCout(T& inputCount, const T& minCount, const T& maxCount, const std::s
 	}
 	//return true;
 }
+
+
 template<typename T>
 void errorCout(T& inputCount, const std::string& msgIn)
 {
@@ -84,6 +87,24 @@ void errorCout(T& inputCount, const std::string& msgIn)
 		std::cin.clear();
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cout << msgIn;
+	}
+}
+*/
+
+void errorCout(int& inputCount, int& minCount, int& maxCount, std::string msgIn)
+{
+	while (true)
+	{
+		std::cout << msgIn;
+		while (!(std::cin >> inputCount))
+		{
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			system("cls");
+			std::cout << msgIn;
+		}
+		if (inputCount < minCount || inputCount > maxCount) system("cls");
+		else break;
 	}
 }
 

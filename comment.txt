@@ -1,0 +1,96 @@
+/*
+template <typename T>
+void clrSreen(T &n,std::string &strMsg) 
+{
+	while (!(std::cin >> n))
+	{
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		system("cls");
+		std::cout << strMsg;
+	}
+}*/
+
+/*
+int main()
+{
+	setlocale(LC_ALL,"RUSSIAN");
+	//std::string bufferStr;
+	//std:: string strMsg = "Введите, число измерений : ";
+	//std::cout << strMsg;
+	int n = 0;
+	bool chose = true;
+	while (chose)
+	{
+		std::cout << "Введите, число измерений (от 1 до 15): ";
+		std::cin >> n;
+		if (n < 1 || n>15) system("cls");
+		else break;
+	}
+	//clrSreen(n, strMsg);
+	//bufferStr = strMsg + char(n + '0') + '\n';
+	double* ptr = new double[n];
+
+	for (int i = 0; i < n; i++)
+	{
+		std::cout << i + 1 << ") ";
+		//std::cin >> ptr[i];
+		//bufferStr = bufferStr  + char(i + 1 + '0') + ") ";
+		//clrSreen(ptr[i], bufferStr);
+		//bufferStr = bufferStr + char(ptr[i] + '0')+'\n';
+		std::cin >> ptr[i];
+	}
+
+	double Md = 0.0;
+	for (int i = 0; i < n; i++)
+	{
+		Md += ptr[i];
+	}
+	Md /= n;
+
+	for (int i = 0; i < n; i++)
+	{
+		ptr[i] = pow((ptr[i] - Md),2);
+	}
+
+	double Ssi = 0.0;
+	for (int i = 0; i < n; i++)
+	{
+		Ssi += ptr[i];
+	}
+
+	//double rmsv = 0.0;
+	double rmsv = pow((Ssi / (n * (n - 1))), 0.5);
+	double cS = 0.0;
+
+	switch (n)
+	{
+	case 1: cS = 12.706; break;
+	case 2: cS = 4.302; break;
+	case 3: cS = 3.182; break;
+	case 4: cS = 2.776; break;
+	case 5: cS = 2.570; break;
+	case 6: cS = 2.446; break;
+	case 7: cS = 2.3646; break;
+	case 8: cS = 2.306; break;
+	case 9: cS = 2.262; break;
+	case 10: cS = 2.228; break;
+	case 11: cS = 2.201; break;
+	case 12: cS = 2.179; break;
+	case 13: cS = 2.16; break;
+	case 14: cS = 2.145; break;
+	case 15: cS = 2.131; break;
+	default: std::cout << "Error!";
+		break;
+	}
+
+	double ciw = rmsv*cS;
+	int num = 0;
+	std::cout << "Укажите, кол-во цифр после запятой: ";
+	std::cin >> num;
+	std::cout << "Ваш ответ: ";
+	//printf("(%lf ± %lf)", Md, ciw);
+	printf("(%.*lf ± %.*lf)", num, Md,num,ciw);
+	delete[] ptr;
+}
+*/

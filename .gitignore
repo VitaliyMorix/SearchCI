@@ -440,8 +440,8 @@ FodyWeavers.xsd
 # End of https://www.toptal.com/developers/gitignore/api/c++,visualstudio
 
 #Visual studio files:
-*.vcxproj.filters
-*.vcxproj.user
-*.vcxproj
-*.sln
-*.txt
+#*.vcxproj.filters
+#*.vcxproj.user
+#*.vcxproj
+#*.sln
+#*.txt
